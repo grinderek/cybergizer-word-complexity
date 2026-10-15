@@ -1,0 +1,10 @@
+.git
+.env*
+!.env.example
+config/master.key
+log/*
+tmp/*
+!log/.keep
+!tmp/.keep
+!tmp/pids/
+!tmp/pids/.keep

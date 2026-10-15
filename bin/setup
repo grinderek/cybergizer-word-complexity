@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+cd "$(dirname "$0")/.."
+docker compose build "$@"
+exec docker compose run --rm prepare

@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  connect_timeout: 2
+  pool: <%= [Integer(ENV.fetch("RAILS_MAX_THREADS", 3)), Integer(ENV.fetch("SIDEKIQ_CONCURRENCY", 3))].max %>
+
+development:
+  <<: *default
+  database: word_complexity_development
+
+test:
+  <<: *default
+  database: word_complexity_test
+
+production:
+  <<: *default
+  database: word_complexity_production
